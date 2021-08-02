@@ -1,56 +1,40 @@
 -- ## Keymappings
 
-local keymap = require("utils.keymap")
-
--- Useful insert mode remappings
-keymap.load_mode(
-  "i",
-  {
-    { "<C-s>", ":w<cr>" },
-    { "<C-c>", "<ESC>" },
-    -- Move cursor
-    { "A-h", "<C-o>h" },
-    { "A-j", "<C-o>j" },
-    { "A-k", "<C-o>k" },
-    { "A-l", "<C-o>l" },
-  },
-  { silent = true }
-)
-
--- Center cursor line when navigating jumps list
-keymap.load_mode(
-  "n",
-  {
-    { "<C-o>", "<C-o>zz" },
-    { "<C-i>", "<C-i>zz" },
-  },
-  { silent = true, noremap = true }
-)
+lvim.keys.normal_mode = {
+  -- Useful insert mode remappings
+  [ "<C-s>" ] = { ":w<cr>" },
+  [ "<C-c>" ] = { "<ESC>" },
+  -- Move cursor
+  [ "A-h" ] = { "<C-o>h" },
+  [ "A-j" ] = { "<C-o>j" },
+  [ "A-k" ] = { "<C-o>k" },
+  [ "A-l" ] = { "<C-o>l" },
+  -- Save and cancel
+  [ "<C-s>" ] = { ":w<cr>" },
+  [ "<C-c>" ] = { "<ESC>" },
+  -- Move cursor
+  [ "A-h" ] = { "<C-o>h" },
+  [ "A-j" ] = { "<C-o>j" },
+  [ "A-k" ] = { "<C-o>k" },
+  [ "A-l" ] = { "<C-o>l" },
+  -- Center cursor line when navigating jumps list
+  [ "<C-o>" ] = { "<C-o>zz" },
+  [ "<C-i>" ] = { "<C-i>zz" },
+  -- Plugin rmagatti/goto-preview
+  [ "gpd" ] = { "zz<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
+  [ "gpi" ] = { "zz<cmd>lua require('goto-preview').goto_preview_implementation()<CR>" },
+  [ "gP" ] = { "<cmd>lua require('goto-preview').close_all_win()<CR>"},
+}
 
 -- Resize window panes
-if vim.fn.has("mac") == 1 then
-  keymap.load_mode(
-    "n",
-    {
-      { "<A-->", ":resize -2<CR>" },
-      { "<A-=>", ":resize +2<CR>" },
-      { "<A-,>", ":vertical resize -2<CR>" },
-      { "<A-.>", ":vertical resize +2<CR>" },
-    },
-    { silent = true, noremap = true }
-  )
+if vim.fn.has "mac" == 1 then
+  lvim.keys.normal_mode = {
+    [ "<A-->" ] = { ":resize -2<CR>" },
+    [ "<A-=>" ] = { ":resize +2<CR>" },
+    [ "<A-,>" ] = { ":vertical resize -2<CR>" },
+    [ "<A-.>" ] = { ":vertical resize +2<CR>" },
+  }
 end
-
--- Plugin rmagatti/goto-preview
-keymap.load_mode(
-  "n",
-  {
-    { "gpd", "zz<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
-    { "gpi", "zz<cmd>lua require('goto-preview').goto_preview_implementation()<CR>" },
-    { "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>" }
-  },
-  { noremap = true, silent = true }
-)
 
 -- ## Whichkey mappings
 
