@@ -1,0 +1,7 @@
+*.old
+*.tmp
+*.temp
+*.bak
+
+plugin/
+
