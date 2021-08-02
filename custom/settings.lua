@@ -3,7 +3,7 @@
 vim.cmd("set nowrap")
 
 -- Formatting and linting on save
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.lint_on_save = true
 
 -- Wrap cursor movement at beginning and end of line
@@ -23,6 +23,7 @@ lvim.lang.typescript.formatters = lvim.lang.javascript.formatters
 lvim.lang.javascriptreact.formatters = lvim.lang.javascript.formatters
 lvim.lang.typescriptreact.formatters = lvim.lang.javascript.formatters
 lvim.lang.vue.formatters = lvim.lang.javascript.formatters
+
 --
 -- Setup linters for JavaScript family
 --
