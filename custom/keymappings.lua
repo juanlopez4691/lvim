@@ -1,39 +1,30 @@
 -- ## Keymappings
 
-lvim.keys.normal_mode = {
-  -- Useful insert mode remappings
-  [ "<C-s>" ] = { ":w<cr>" },
-  [ "<C-c>" ] = { "<ESC>" },
-  -- Move cursor
-  [ "A-h" ] = { "<C-o>h" },
-  [ "A-j" ] = { "<C-o>j" },
-  [ "A-k" ] = { "<C-o>k" },
-  [ "A-l" ] = { "<C-o>l" },
-  -- Save and cancel
-  [ "<C-s>" ] = { ":w<cr>" },
-  [ "<C-c>" ] = { "<ESC>" },
-  -- Move cursor
-  [ "A-h" ] = { "<C-o>h" },
-  [ "A-j" ] = { "<C-o>j" },
-  [ "A-k" ] = { "<C-o>k" },
-  [ "A-l" ] = { "<C-o>l" },
-  -- Center cursor line when navigating jumps list
-  [ "<C-o>" ] = { "<C-o>zz" },
-  [ "<C-i>" ] = { "<C-i>zz" },
-  -- Plugin rmagatti/goto-preview
-  [ "gpd" ] = { "zz<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
-  [ "gpi" ] = { "zz<cmd>lua require('goto-preview').goto_preview_implementation()<CR>" },
-  [ "gP" ] = { "<cmd>lua require('goto-preview').close_all_win()<CR>"},
-}
+-- Useful insert mode remappings
+lvim.keys.normal_mode[ "<C-s>" ] = ":w<cr>"
+lvim.keys.normal_mode[ "<C-c>" ] = "<ESC>"
+-- Save and cancel
+lvim.keys.normal_mode[ "<C-s>" ] = ":w<cr>"
+lvim.keys.normal_mode[ "<C-c>" ] = "<ESC>"
+-- Center cursor line when navigating jumps list
+lvim.keys.normal_mode[ "<C-o>" ] = "<C-o>zz"
+lvim.keys.normal_mode[ "<C-i>" ] = "<C-i>zz"
+-- Plugin rmagatti/goto-preview
+lvim.keys.normal_mode[ "gpd" ] = "zz<cmd>lua require('goto-preview').goto_preview_definition()<CR>"
+lvim.keys.normal_mode[ "gpi" ] = "zz<cmd>lua require('goto-preview').goto_preview_implementation()<CR>"
+lvim.keys.normal_mode[ "gP" ] = "<cmd>lua require('goto-preview').close_all_win()<CR>"
+-- Move cursor while in insert mode
+lvim.keys.insert_mode[ "A-h" ] = "<C-o>h"
+lvim.keys.insert_mode[ "A-j" ] = "<C-o>j"
+lvim.keys.insert_mode[ "A-k" ] = "<C-o>k"
+lvim.keys.insert_mode[ "A-l" ] = "<C-o>l"
 
 -- Resize window panes
 if vim.fn.has "mac" == 1 then
-  lvim.keys.normal_mode = {
-    [ "<A-->" ] = { ":resize -2<CR>" },
-    [ "<A-=>" ] = { ":resize +2<CR>" },
-    [ "<A-,>" ] = { ":vertical resize -2<CR>" },
-    [ "<A-.>" ] = { ":vertical resize +2<CR>" },
-  }
+  lvim.keys.normal_mode[ "<A-->" ] = ":resize -2<CR>"
+  lvim.keys.normal_mode[ "<A-=>" ] = ":resize +2<CR>"
+  lvim.keys.normal_mode[ "<A-,>" ] = ":vertical resize -2<CR>"
+  lvim.keys.normal_mode[ "<A-.>" ] = ":vertical resize +2<CR>"
 end
 
 -- ## Whichkey mappings
