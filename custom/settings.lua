@@ -2,6 +2,10 @@
 
 vim.cmd("set nowrap")
 
+-- Register * will not be modified by yank, delete, change or put operations
+-- See https://neovim.io/doc/user/options.html#'clipboard'
+vim.opt.clipboard = ""
+
 -- Formatting and linting on save
 lvim.format_on_save = false
 lvim.lint_on_save = true
