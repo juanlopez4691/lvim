@@ -15,8 +15,9 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Set colorscheme
 -- lvim.colorscheme = "nord"
-lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "tokyonight"
 -- lvim.colorscheme = "spacegray"
+-- lvim.colorscheme = "onedarker"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then
