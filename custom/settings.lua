@@ -38,11 +38,24 @@ vim.cmd("set whichwrap+=<,>,h,l,[,]")
 -- lvim.lang.vue.linters = lvim.lang.javascript.linters
 
 -- CSS formatter
-lvim.lang.css.formatters = {{ "prettier" }}
+-- lvim.lang.css.formatters = {{ "prettier" }}
 
 -- PHP linter & formatter
 -- TODO: get phpcs to run when file is saved
 -- TODO: run phpcbf manually
 -- lvim.lang.php.linters = {{ exe = "phpcs" }}
 -- lvim.lang.php.formatters = {{ exe = "phpcbf" }}
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup({
+  {
+    exe = "prettier",
+      filetypes = {
+      "javascript",
+      "json",
+      "scss",
+      "css"
+    }
+  }
+})
 
