@@ -33,14 +33,10 @@ end
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols outline" }
 
 -- Trouble plugin
-lvim.builtin.which_key.mappings.l.t = {
-  "<cmd>TroubleToggle<CR>",
-  "trouble toggle",
-}
-
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  t = { "<cmd>TroubleToggle<CR>", "Trouble toggle" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
