@@ -30,10 +30,7 @@ end
 -- ## Whichkey mappings
 
 -- Symbols outline plugin
-lvim.builtin.which_key.mappings.o = {
-  "<cmd>SymbolsOutline<CR>",
-  "Symbols outline",
-}
+lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols outline" }
 
 -- Trouble plugin
 lvim.builtin.which_key.mappings.l.t = {
