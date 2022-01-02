@@ -1,5 +1,6 @@
 -- ## Color schemes
 
+table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
 table.insert(lvim.plugins, { "lunarvim/colorschemes" })
 table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
 
@@ -41,3 +42,7 @@ if lvim.colorscheme == "tokyonight" then
     },
   }
 end
+
+-- lvim.colorscheme = "onedarker"
+lvim.colorscheme = "onedarkpro"
+
