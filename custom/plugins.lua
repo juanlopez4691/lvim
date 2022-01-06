@@ -21,7 +21,17 @@ lvim.builtin.telescope.defaults.layout_config.width = 0.9
 lvim.builtin.terminal.float_opts.width = max_window_width
 lvim.builtin.terminal.float_opts.height = max_window_height 
 
--- ## User plugins
+-- ## Custom settings for plugin SymbolsOutline
+vim.g.symbols_outline = {
+  relative = false,
+  -- Get a wider sidebar for SymbolsOutline, min 40 columns on smaller screens.
+  width = math.ceil(math.min(vim.o.columns, math.max(40, vim.o.columns / 6 ))),
+  -- No preview by default
+  auto_preview = false,
+  preview_bg_highlight = '',
+}
+
+-- ## User plugins installation
 
 lvim.plugins = {
   {
@@ -86,7 +96,6 @@ lvim.plugins = {
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    event = "BufRead",
   },
   {
     "norcalli/nvim-colorizer.lua",
