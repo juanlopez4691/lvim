@@ -3,12 +3,8 @@
 local max_window_width = math.ceil(math.min(vim.o.columns, math.max(120, vim.o.columns - 5)))
 local max_window_height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lines - 7)))
 
--- Ensure nvimtree shows hidden files
-lvim.builtin.nvimtree.hide_dotfiles = 0
-
 -- Ensure nvimtree shows git status icons.
 lvim.builtin.nvimtree.show_icons.git = 1
-lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.nvimtree.highlight_opened_files = 1
 
 -- Ensure telescope shows full path to files.
