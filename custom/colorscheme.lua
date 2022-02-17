@@ -44,5 +44,5 @@ if lvim.colorscheme == "tokyonight" then
 end
 
 -- lvim.colorscheme = "onedarker"
-lvim.colorscheme = "onedarkpro"
+lvim.colorscheme = "onedarker"
 
