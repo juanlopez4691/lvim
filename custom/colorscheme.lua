@@ -3,24 +3,22 @@
 table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
 table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
 
--- Colorschene tokyonight settings
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_dark_float = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-
--- change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
-
--- Set colorscheme
--- lvim.colorscheme = "nord"
+-- Set color scheme
 -- lvim.colorscheme = "tokyonight"
--- lvim.colorscheme = "spacegray"
 lvim.colorscheme = "onedarkpro"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then
+  -- Colorschene tokyonight settings
+  vim.g.tokyonight_style = "night"
+  vim.g.tokyonight_italic_comments = true
+  vim.g.tokyonight_italic_functions = true
+  vim.g.tokyonight_dark_float = true
+  vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+
+  -- change the "hint" color to the "orange" color, and make the "error" color bright red
+  vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+
   lvim.builtin.galaxyline = {
     active = true,
     colors = {
