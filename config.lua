@@ -11,7 +11,6 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -150,4 +149,4 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 
-local status_ok, error = pcall(vim.cmd, "luafile ~/.config/lvim/custom/init.lua")
+pcall(vim.cmd, "luafile ~/.config/lvim/custom/init.lua")
