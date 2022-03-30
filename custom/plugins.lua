@@ -15,20 +15,9 @@ lvim.builtin.telescope.defaults.layout_config.width = 0.9
 
 -- We want a bigger floating terminal.
 lvim.builtin.terminal.float_opts.width = max_window_width
-lvim.builtin.terminal.float_opts.height = max_window_height 
-
--- ## Custom settings for plugin SymbolsOutline
-vim.g.symbols_outline = {
-  relative = false,
-  -- Get a wider sidebar for SymbolsOutline, min 40 columns on smaller screens.
-  width = math.ceil(math.min(vim.o.columns, math.max(40, vim.o.columns / 6 ))),
-  -- No preview by default
-  auto_preview = false,
-  preview_bg_highlight = '',
-}
+lvim.builtin.terminal.float_opts.height = max_window_height
 
 -- ## User plugins installation
-
 lvim.plugins = {
   {
     "ray-x/lsp_signature.nvim",
