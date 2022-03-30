@@ -17,6 +17,7 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 -- lvim.colorscheme = "nord"
 -- lvim.colorscheme = "tokyonight"
 -- lvim.colorscheme = "spacegray"
+lvim.colorscheme = "onedarkpro"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then
@@ -41,4 +42,32 @@ if lvim.colorscheme == "tokyonight" then
   }
 end
 
+-- Colorschene olimorris/onedarkpro
+if lvim.colorscheme == "onedarkpro" then
+  local onedarkpro = require("onedarkpro")
+  onedarkpro.setup({
+    colors = {
+      onedark = {
+        bg = "#181a1f"
+      },
+    },
+    styles = {
+      comments = "italic",
+      functions = "NONE",
+      keywords = "bold,italic",
+      strings = "NONE",
+      variables = "NONE"
+    },
+    options = {
+      bold = true,
+      italic = true,
+      underline = true,
+      undercurl = true
+    }
+  })
 
+  -- Set dark variant
+  vim.o.background = "dark"
+  -- Load colorscheme
+  onedarkpro.load()
+end
