@@ -145,7 +145,7 @@ lvim.plugins = {
 }
 
 -- Attach ls_signature to lsp
-lvim.lsp.on_attach_callback = function(client, bufnr)
+lvim.lsp.on_attach_callback = function()
   require("lsp_signature").on_attach()
 end
 
