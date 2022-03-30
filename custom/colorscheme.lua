@@ -1,7 +1,6 @@
 -- ## Color schemes
 
 table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
-table.insert(lvim.plugins, { "lunarvim/colorschemes" })
 table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
 
 -- Colorschene tokyonight settings
