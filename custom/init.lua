@@ -10,3 +10,9 @@ for i, file in ipairs(files) do
   end
 end
 
+-- Plugin simrat39/symbols-outline settings.
+vim.g.symbols_outline = {
+  auto_preview = false,
+  show_numbers = true,
+  preview_bg_highlight = '',
+}
