@@ -101,18 +101,7 @@ lvim.plugins = {
       })
     end
   },
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    event = "BufRead",
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        context_commentstring = {
-          enable = true
-        }
-      }
-    end
-  },
-  {
+ {
     "folke/trouble.nvim",
     event = "BufRead",
   },
