@@ -1,10 +1,12 @@
 -- ## Autocommands
 
-lvim.autocommands.custom_groups = {
-  -- Highlight matching brackets
+lvim.autocommands = {
   {
+    -- Highlight matching brackets
     "BufRead,BufNewFile",
-    "*",
-    "highlight MatchParen ctermfg=yellow guifg=yellow",
-  },
+    {
+      pattern = { "*" },
+      command = ":highlight MatchParen ctermfg=yellow guifg=yellow",
+    },
+  }
 }
