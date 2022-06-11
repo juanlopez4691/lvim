@@ -10,8 +10,8 @@ lvim.keys.normal_mode[ "<C-c>" ] = "<ESC>"
 lvim.keys.normal_mode[ "<C-o>" ] = "<C-o>zz"
 lvim.keys.normal_mode[ "<C-i>" ] = "<C-i>zz"
 -- Plugin rmagatti/goto-preview
-lvim.keys.normal_mode[ "gpd" ] = "zz<cmd>lua require('goto-preview').goto_preview_definition()<CR>"
-lvim.keys.normal_mode[ "gpi" ] = "zz<cmd>lua require('goto-preview').goto_preview_implementation()<CR>"
+lvim.keys.normal_mode[ "gpd" ] = "<cmd>lua require('goto-preview').goto_preview_definition()<CR>"
+lvim.keys.normal_mode[ "gpi" ] = "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>"
 lvim.keys.normal_mode[ "gP" ] = "<cmd>lua require('goto-preview').close_all_win()<CR>"
 -- Move cursor while in insert mode
 lvim.keys.insert_mode[ "A-h" ] = "<C-o>h"
