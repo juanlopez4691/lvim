@@ -6,6 +6,10 @@ vim.cmd("set nowrap")
 -- See https://neovim.io/doc/user/options.html#'clipboard'
 vim.opt.clipboard = ""
 
+-- Vertical and horizontal scroll offset.
+vim.opt.scrolloff = 2
+vim.opt.sidescrolloff = 4
+
 -- Formatting and linting on save
 lvim.format_on_save = false
 lvim.lint_on_save = true
