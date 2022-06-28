@@ -1,7 +1,7 @@
 -- ## Color schemes
 
-table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
-table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
+-- table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
+-- table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
 table.insert(lvim.plugins, { "rebelot/kanagawa.nvim" })
 
 -- Set color scheme
