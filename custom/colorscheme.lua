@@ -1,8 +1,15 @@
 -- ## Color schemes
-
 -- table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
 -- table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
-table.insert(lvim.plugins, { "rebelot/kanagawa.nvim" })
+
+-- Custom colors for kanagawa colorscheme.
+if lvim.colorscheme == "kanagawa" then
+  local colors = {
+    sumiInk1 = "#17171F",
+    sumiInk3 = "#22222d"
+  }
+  require'kanagawa'.setup({ colors = colors })
+end
 
 -- Set color scheme
 -- lvim.colorscheme = "tokyonight"
