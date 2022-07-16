@@ -14,11 +14,10 @@ lvim.keys.normal_mode[ "gpd" ] = "<cmd>lua require('goto-preview').goto_preview_
 lvim.keys.normal_mode[ "gpi" ] = "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>"
 lvim.keys.normal_mode[ "gP" ] = "<cmd>lua require('goto-preview').close_all_win()<CR>"
 -- Move cursor while in insert mode
-lvim.keys.insert_mode[ "A-h" ] = "<C-o>h"
-lvim.keys.insert_mode[ "A-j" ] = "<C-o>j"
-lvim.keys.insert_mode[ "A-k" ] = "<C-o>k"
-lvim.keys.insert_mode[ "A-l" ] = "<C-o>l"
-
+lvim.keys.insert_mode[ "<A-h>" ] = "<C-o>h"
+lvim.keys.insert_mode[ "<A-j>" ] = "<C-o>j"
+lvim.keys.insert_mode[ "<A-k>" ] = "<C-o>k"
+lvim.keys.insert_mode[ "<A-l>" ] = "<C-o>l"
 -- Resize window panes
 if vim.fn.has "mac" == 1 then
   lvim.keys.normal_mode[ "<A-->" ] = ":resize -2<CR>"
