@@ -18,6 +18,12 @@ lvim.keys.insert_mode[ "<A-h>" ] = "<C-o>h"
 lvim.keys.insert_mode[ "<A-j>" ] = "<C-o>j"
 lvim.keys.insert_mode[ "<A-k>" ] = "<C-o>k"
 lvim.keys.insert_mode[ "<A-l>" ] = "<C-o>l"
+-- Tab switch buffer
+lvim.keys.normal_mode[ "<A-h>" ] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode[ "<A-l>" ] = ":BufferLineCycleNext<CR>"
+-- Restore jumto to home, lower
+lvim.keys.normal_mode[ "<S-h>" ] = "H"
+lvim.keys.normal_mode[ "<S-l>" ] = "L"
 -- Resize window panes
 if vim.fn.has "mac" == 1 then
   lvim.keys.normal_mode[ "<A-->" ] = ":resize -2<CR>"
