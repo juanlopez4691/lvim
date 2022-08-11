@@ -1,5 +1,6 @@
 -- ## Color schemes
--- table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
+table.insert(lvim.plugins, { "olimorris/onedarkpro.nvim" })
+table.insert(lvim.plugins, { "rebelot/kanagawa.nvim" })
 -- table.insert(lvim.plugins, { "folke/tokyonight.nvim" })
 
 -- Custom colors for kanagawa colorscheme.
@@ -13,8 +14,8 @@ end
 
 -- Set color scheme
 -- lvim.colorscheme = "tokyonight"
--- lvim.colorscheme = "onedarkpro"
-lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "onedarkpro"
+-- lvim.colorscheme = "kanagawa"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then

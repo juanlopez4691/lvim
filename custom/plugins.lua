@@ -148,10 +148,6 @@ lvim.plugins = {
       }
     end,
   },
-  {
-    -- Colorschene Kanagawa https://github.com/rebelot/kanagawa.nvim
-    "rebelot/kanagawa.nvim"
-  },
 }
 
 -- Attach ls_signature to lsp
