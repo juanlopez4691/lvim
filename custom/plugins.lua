@@ -44,29 +44,6 @@ lvim.plugins = {
     event = "BufRead"
   },
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufRead",
-    setup = function()
-      vim.g.indentLine_enabled = 1
-      vim.g.indent_blankline_char = "▏"
-      -- vim.g.indent_blankline_space_char = "·"
-
-      vim.g.indent_blankline_filetype_exclude = {
-        "help",
-        "terminal",
-        "dashboard",
-        "Outline",
-      }
-
-      vim.g.indent_blankline_show_trailing_blankline_indent = false
-      vim.g.indent_blankline_show_first_indent_level = true
-      vim.g.indent_blankline_indent_level = 10
-      vim.g.indent_blankline_use_treesitter = true
-
-      vim.api.nvim_command("highlight IndentBlanklineChar guifg=#4A4A4A gui=nocombine")
-    end
-  },
-  {
     "editorconfig/editorconfig-vim",
     event = "BufRead",
     config = function()
