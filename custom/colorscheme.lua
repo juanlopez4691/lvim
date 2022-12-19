@@ -14,7 +14,7 @@ end
 
 -- Set color scheme
 -- lvim.colorscheme = "tokyonight"
-lvim.colorscheme = "onedarkpro"
+lvim.colorscheme = "onedark"
 -- lvim.colorscheme = "kanagawa"
 
 -- Fix galaxyline colors for tokyonight colorscheme
@@ -51,7 +51,7 @@ if lvim.colorscheme == "tokyonight" then
 end
 
 -- Colorschene olimorris/onedarkpro
-if lvim.colorscheme == "onedarkpro" then
+if lvim.colorscheme == "onedark" then
   local onedarkpro = require("onedarkpro")
   onedarkpro.setup({
     colors = {
