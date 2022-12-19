@@ -9,26 +9,8 @@ lvim.builtin.nvimtree.setup.renderer.highlight_opened_files = "all"
 
 -- Ensure telescope shows full path to files.
 lvim.builtin.telescope.defaults.path_display = {"absolute"}
-lvim.builtin.telescope.defaults.layout_strategy = "flex"
 -- Exclude some folders from telescope live_grep.
 lvim.builtin.telescope.defaults.file_ignore_paths = {"vendor", "node_modules", "dist"}
-lvim.builtin.telescope.defaults.vimgrep_arguments = {
-  "rg",
-  'rg',
-  '--color=never',
-  '--no-heading',
-  '--with-filename',
-  '--line-number',
-  '--column',
-  '--smart-case',
-  "--hidden",
-  "--glob=!.git/",
-  '--ignore-file',
-  '.gitignore'
-}
-
--- We want a bigger telescope window
-lvim.builtin.telescope.defaults.layout_config.width = 0.9
 
 -- We want a bigger floating terminal.
 lvim.builtin.terminal.float_opts.width = max_window_width
