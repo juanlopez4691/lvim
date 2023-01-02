@@ -79,7 +79,11 @@
       "acf-pro"
     ],
     "environment": {
-      "includePaths": "/Users/joanlopez/.composer/vendor/php-stubs"
+      "phpVersion": "8.1.0",
+      "includePaths": [
+        "~/.composer/vendor/php-stubs",
+        "~/Projects/Sites/WordPress"
+      ]
     },
     "files": {
       "maxSize": 5000000
