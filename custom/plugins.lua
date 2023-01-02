@@ -7,10 +7,43 @@ local max_window_height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lin
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.renderer.highlight_opened_files = "all"
 
--- Ensure telescope shows full path to files.
-lvim.builtin.telescope.defaults.path_display = {"absolute"}
--- Exclude some folders from telescope live_grep.
-lvim.builtin.telescope.defaults.file_ignore_paths = {"vendor", "node_modules", "dist"}
+-- Define telescope config settings.
+local telescope = lvim.builtin.telescope
+local _, actions = pcall(require, "telescope.actions")
+local window_max_size = {
+  width = 0.95,
+  height = 0.95,
+}
+telescope.defaults = {
+  -- Exclude some folders from telescope live_grep.
+  file_ignore_paths = {"vendor", "node_modules", "dist"},
+  -- Ensure telescope shows full path to files.
+  path_display = {"absolute"},
+  -- Start telescope in normal mode.
+  initial_mode = 'normal',
+  -- Make telescope window bigger.
+  layout_config = {
+    center = window_max_size,
+    vertical = window_max_size,
+    horizontal = window_max_size,
+  },
+  -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
+  -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
+  mappings = {
+    -- for input mode
+    i = {
+      ["<C-j>"] = actions.move_selection_next,
+      ["<C-k>"] = actions.move_selection_previous,
+      ["<C-n>"] = actions.cycle_history_next,
+      ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+      ["<C-j>"] = actions.move_selection_next,
+      ["<C-k>"] = actions.move_selection_previous,
+    },
+  },
+}
 
 -- We want a bigger floating terminal.
 lvim.builtin.terminal.float_opts.width = max_window_width
