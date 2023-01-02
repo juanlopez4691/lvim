@@ -34,6 +34,9 @@ end
 
 -- ## Whichkey mappings
 
+-- Telescope File Browser
+lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser<CR>", "Telescope file browser" }
+
 -- Symbols outline plugin
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols outline" }
 

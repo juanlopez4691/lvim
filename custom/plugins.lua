@@ -214,6 +214,9 @@ lvim.plugins = {
       }
     end
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+  },
 }
 
 -- Attach ls_signature to lsp
