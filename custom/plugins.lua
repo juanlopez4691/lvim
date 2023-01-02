@@ -139,9 +139,9 @@ lvim.plugins = {
       })
     end
   },
- {
+  {
     "folke/trouble.nvim",
-    event = "BufRead",
+    cmd = "TroubleToggle",
   },
   {
     'rmagatti/goto-preview',
