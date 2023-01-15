@@ -14,8 +14,8 @@ end
 
 -- Set color scheme
 -- lvim.colorscheme = "tokyonight"
-lvim.colorscheme = "onedark"
--- lvim.colorscheme = "kanagawa"
+-- lvim.colorscheme = "onedark"
+lvim.colorscheme = "kanagawa"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then
