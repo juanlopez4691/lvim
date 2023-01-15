@@ -217,6 +217,9 @@ lvim.plugins = {
   {
     "nvim-telescope/telescope-file-browser.nvim",
   },
+  {
+    "jeffkreeftmeijer/vim-numbertoggle",
+  },
 }
 
 -- Attach ls_signature to lsp
