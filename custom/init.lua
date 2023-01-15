@@ -16,13 +16,6 @@ for i, file in ipairs(files) do
   end
 end
 
--- Plugin simrat39/symbols-outline settings.
-vim.g.symbols_outline = {
-  auto_preview = false,
-  show_numbers = true,
-  preview_bg_highlight = '',
-}
-
 -- Setup telescope extensions.
 lvim.builtin.telescope.on_config_done = function(telescope)
   local actions = require('telescope.actions')
