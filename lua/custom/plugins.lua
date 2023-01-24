@@ -251,6 +251,13 @@ lvim.plugins = {
       })
     end
   },
+  -- Color schemes.
+  {
+    "olimorris/onedarkpro.nvim",
+  },
+  {
+    "rebelot/kanagawa.nvim",
+  },
 }
 
 -- Attach ls_signature to lsp
