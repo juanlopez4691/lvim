@@ -108,4 +108,4 @@ lvim.builtin.treesitter.auto_install = true
 --   end,
 -- })
 
-pcall(vim.cmd, "luafile ~/.config/lvim/custom/init.lua")
+require("custom");

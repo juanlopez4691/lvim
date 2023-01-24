@@ -1,4 +1,4 @@
-local base_path = '~/.config/lvim/custom/'
+local base_path = '~/.config/lvim/lua/custom/'
 local files = {
   'settings',
   'keymappings',

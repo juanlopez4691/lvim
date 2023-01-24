@@ -16,9 +16,9 @@ local window_max_size = {
 }
 telescope.defaults = {
   -- Exclude some folders from telescope live_grep.
-  file_ignore_paths = {"vendor", "node_modules", "dist"},
+  file_ignore_paths = { "vendor", "node_modules", "dist" },
   -- Ensure telescope shows full path to files.
-  path_display = {"absolute"},
+  path_display = { "absolute" },
   -- Start telescope in normal mode.
   initial_mode = 'normal',
   -- Make telescope window bigger.
@@ -54,7 +54,7 @@ lvim.plugins = {
   {
     "ray-x/lsp_signature.nvim",
     config = function()
-      require"lsp_signature".on_attach()
+      require "lsp_signature".on_attach()
     end,
     event = "BufRead"
   },
@@ -74,8 +74,8 @@ lvim.plugins = {
     config = function()
       require('neoscroll').setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
-        mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-        '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+        mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
+          '<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
         hide_cursor = true, -- Hide cursor while scrolling
         stop_eof = true, -- Stop at <EOF> when scrolling downwards
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
@@ -107,7 +107,7 @@ lvim.plugins = {
         fold_markers = { '', '' },
         wrap = false,
         keymaps = { -- These keymaps can be a string or a table for multiple keys
-          close = {"<Esc>", "q"},
+          close = { "<Esc>", "q" },
           goto_location = "<Cr>",
           focus_location = "o",
           hover_symbol = "<C-space>",
@@ -123,34 +123,40 @@ lvim.plugins = {
         lsp_blacklist = {},
         symbol_blacklist = {},
         symbols = {
-          File = {icon = "", hl = "TSURI"},
-          Module = {icon = "", hl = "TSNamespace"},
-          Namespace = {icon = "", hl = "TSNamespace"},
-          Package = {icon = "", hl = "TSNamespace"},
-          Class = {icon = "𝓒", hl = "TSType"},
-          Method = {icon = "ƒ", hl = "TSMethod"},
-          Property = {icon = "", hl = "TSMethod"},
-          Field = {icon = "", hl = "TSField"},
-          Constructor = {icon = "", hl = "TSConstructor"},
-          Enum = {icon = "ℰ", hl = "TSType"},
-          Interface = {icon = "ﰮ", hl = "TSType"},
-          Function = {icon = "", hl = "TSFunction"},
-          Variable = {icon = "", hl = "TSConstant"},
-          Constant = {icon = "", hl = "TSConstant"},
-          String = {icon = "𝓐", hl = "TSString"},
-          Number = {icon = "#", hl = "TSNumber"},
-          Boolean = {icon = "⊨", hl = "TSBoolean"},
-          Array = {icon = "", hl = "TSConstant"},
-          Object = {icon = "⦿", hl = "TSType"},
-          Key = {icon = "🔐", hl = "TSType"},
-          Null = {icon = "NULL", hl = "TSType"},
-          EnumMember = {icon = "", hl = "TSField"},
-          Struct = {icon = "𝓢", hl = "TSType"},
-          Event = {icon = "🗲", hl = "TSType"},
-          Operator = {icon = "+", hl = "TSOperator"},
-          TypeParameter = {icon = "𝙏", hl = "TSParameter"}
+          File = { icon = "", hl = "TSURI" },
+          Module = { icon = "", hl = "TSNamespace" },
+          Namespace = { icon = "", hl = "TSNamespace" },
+          Package = { icon = "", hl = "TSNamespace" },
+          Class = { icon = "𝓒", hl = "TSType" },
+          Method = { icon = "ƒ", hl = "TSMethod" },
+          Property = { icon = "", hl = "TSMethod" },
+          Field = { icon = "", hl = "TSField" },
+          Constructor = { icon = "", hl = "TSConstructor" },
+          Enum = { icon = "ℰ", hl = "TSType" },
+          Interface = { icon = "ﰮ", hl = "TSType" },
+          Function = { icon = "", hl = "TSFunction" },
+          Variable = { icon = "", hl = "TSConstant" },
+          Constant = { icon = "", hl = "TSConstant" },
+          String = { icon = "𝓐", hl = "TSString" },
+          Number = { icon = "#", hl = "TSNumber" },
+          Boolean = { icon = "⊨", hl = "TSBoolean" },
+          Array = { icon = "", hl = "TSConstant" },
+          Object = { icon = "⦿", hl = "TSType" },
+          Key = { icon = "🔐", hl = "TSType" },
+          Null = { icon = "NULL", hl = "TSType" },
+          EnumMember = { icon = "", hl = "TSField" },
+          Struct = { icon = "𝓢", hl = "TSType" },
+          Event = { icon = "🗲", hl = "TSType" },
+          Operator = { icon = "+", hl = "TSOperator" },
+          TypeParameter = { icon = "𝙏", hl = "TSParameter" }
         }
       })
+    end
+  },
+  {
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    config = function()
+      require("tailwindcss-colors").setup()
     end
   },
   {
@@ -187,7 +193,7 @@ lvim.plugins = {
         opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
         -- post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
         post_open_hook = function(buffer, _)
-          vim.api.nvim_buf_set_keymap(buffer, 'n', 'q', ':q<CR>', {noremap = true})
+          vim.api.nvim_buf_set_keymap(buffer, 'n', 'q', ':q<CR>', { noremap = true })
         end
       }
     end
@@ -220,10 +226,34 @@ lvim.plugins = {
   {
     "jeffkreeftmeijer/vim-numbertoggle",
   },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("colorful-winsep").setup({
+        -- highlight for Window separator
+        highlight = {
+          bg = "#16161E",
+          fg = "#32566E",
+        },
+        -- timer refresh rate
+        interval = 30,
+        -- This plugin will not be activated for filetype in the following table.
+        no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
+        -- Symbols for separator lines, the order: horizontal, vertical, top left, top right, bottom left, bottom right.
+        symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
+        close_event = function()
+          -- Executed after closing the window separator
+        end,
+        create_event = function()
+          -- Executed after creating the window separator
+        end,
+      })
+    end
+  },
 }
 
 -- Attach ls_signature to lsp
 lvim.lsp.on_attach_callback = function()
   require("lsp_signature").on_attach()
 end
-

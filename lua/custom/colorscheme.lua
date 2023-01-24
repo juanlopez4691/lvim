@@ -9,13 +9,13 @@ if lvim.colorscheme == "kanagawa" then
     sumiInk1 = "#17171F",
     sumiInk3 = "#22222d"
   }
-  require'kanagawa'.setup({ colors = colors })
+  require 'kanagawa'.setup({ colors = colors })
 end
 
 -- Set color scheme
--- lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-night"
 -- lvim.colorscheme = "onedark"
-lvim.colorscheme = "kanagawa"
+-- lvim.colorscheme = "kanagawa"
 
 -- Fix galaxyline colors for tokyonight colorscheme
 if lvim.colorscheme == "tokyonight" then
