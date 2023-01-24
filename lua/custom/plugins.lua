@@ -251,6 +251,10 @@ lvim.plugins = {
       })
     end
   },
+  {
+    "sindrets/diffview.nvim",
+    event = "BufWinEnter",
+  },
   -- Color schemes.
   {
     "olimorris/onedarkpro.nvim",
