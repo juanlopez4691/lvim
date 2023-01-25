@@ -2,6 +2,9 @@
 
 vim.cmd("set nowrap")
 
+-- Time delay to show WhichKey panel.
+vim.opt.timeoutlen = 300
+
 -- Register * will not be modified by yank, delete, change or put operations
 -- See https://neovim.io/doc/user/options.html#'clipboard'
 vim.opt.clipboard = ""
@@ -54,7 +57,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
   {
     exe = "prettier",
-      filetypes = {
+    filetypes = {
       "javascript",
       "json",
       "scss",
@@ -62,4 +65,3 @@ formatters.setup({
     }
   }
 })
-
