@@ -195,7 +195,15 @@ lvim.plugins = {
         -- post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
         post_open_hook = function(buffer, _)
           vim.api.nvim_buf_set_keymap(buffer, 'n', 'q', ':q<CR>', { noremap = true })
-        end
+        end,
+        references = {
+          telescope = require("telescope.themes").get_dropdown({
+            hide_preview = false,
+            layout_config = {
+              width = 0.8,
+            },
+          })
+        }
       }
     end
   },
