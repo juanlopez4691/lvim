@@ -9,10 +9,6 @@ lvim.keys.normal_mode["<C-c>"] = "<ESC>"
 -- Center cursor line when navigating jumps list
 lvim.keys.normal_mode["<C-o>"] = "<C-o>zz"
 lvim.keys.normal_mode["<C-i>"] = "<C-i>zz"
--- Plugin rmagatti/goto-preview
-lvim.keys.normal_mode["gpd"] = "<cmd>lua require('goto-preview').goto_preview_definition()<CR>"
-lvim.keys.normal_mode["gpi"] = "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>"
-lvim.keys.normal_mode["gP"] = "<cmd>lua require('goto-preview').close_all_win()<CR>"
 -- Move cursor while in insert mode
 lvim.keys.insert_mode["<A-h>"] = "<C-o>h"
 lvim.keys.insert_mode["<A-j>"] = "<C-o>j"
@@ -21,7 +17,7 @@ lvim.keys.insert_mode["<A-l>"] = "<C-o>l"
 -- Tab switch buffer
 lvim.keys.normal_mode["<A-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["<A-l>"] = ":BufferLineCycleNext<CR>"
--- Restore jumto to home, lower
+-- Restore jump to screen top, bottom
 lvim.keys.normal_mode["<S-h>"] = "H"
 lvim.keys.normal_mode["<S-l>"] = "L"
 -- Resize window panes
@@ -40,6 +36,14 @@ lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser<CR>", "Tel
 -- Symbols outline plugin
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols outline" }
 
+-- Plugin rmagatti/goto-preview
+lvim.builtin.which_key.mappings["G"] = {
+  name = "+Goto preview",
+  d = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Preview definition" },
+  i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Preview implementation" },
+  r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "Preview references" },
+  P = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all windows" },
+}
 -- Trouble plugin
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
