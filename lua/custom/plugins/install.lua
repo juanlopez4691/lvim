@@ -2,48 +2,6 @@
 local max_window_width = math.ceil(math.min(vim.o.columns, math.max(120, vim.o.columns - 5)))
 local max_window_height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lines - 7)))
 
--- Ensure nvimtree shows git status icons.
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-lvim.builtin.nvimtree.setup.renderer.highlight_opened_files = "all"
-
--- Define telescope config settings.
-local telescope = lvim.builtin.telescope
-local _, actions = pcall(require, "telescope.actions")
-local window_max_size = {
-  width = 0.95,
-  height = 0.95,
-}
-telescope.defaults = {
-  -- Exclude some folders from telescope live_grep.
-  file_ignore_paths = { "vendor", "node_modules", "dist" },
-  -- Ensure telescope shows full path to files.
-  path_display = { "absolute" },
-  -- Start telescope in normal mode.
-  initial_mode = 'normal',
-  -- Make telescope window bigger.
-  layout_config = {
-    center = window_max_size,
-    vertical = window_max_size,
-    horizontal = window_max_size,
-  },
-  -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
-  -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
-  mappings = {
-    -- for input mode
-    i = {
-      ["<C-j>"] = actions.move_selection_next,
-      ["<C-k>"] = actions.move_selection_previous,
-      ["<C-n>"] = actions.cycle_history_next,
-      ["<C-p>"] = actions.cycle_history_prev,
-    },
-    -- for normal mode
-    n = {
-      ["<C-j>"] = actions.move_selection_next,
-      ["<C-k>"] = actions.move_selection_previous,
-    },
-  },
-}
-
 -- We want a bigger floating terminal.
 lvim.builtin.terminal.float_opts.width = max_window_width
 lvim.builtin.terminal.float_opts.height = max_window_height
@@ -51,15 +9,16 @@ lvim.builtin.terminal.float_opts.height = max_window_height
 -- ## User plugins installation
 lvim.plugins = {
   {
-    "ray-x/lsp_signature.nvim",
+    'ray-x/lsp_signature.nvim',
+    -- Attach lsp_signature to lsp
     config = function()
-      require "lsp_signature".on_attach()
+      require 'lsp_signature'.on_attach()
     end,
-    event = "BufRead"
+    event = 'BufRead'
   },
   {
-    "editorconfig/editorconfig-vim",
-    event = "BufRead",
+    'editorconfig/editorconfig-vim',
+    event = 'BufRead',
     config = function()
       vim.g.EditorConfig_exclude_patterns = {
         'fugitive://.*',
@@ -68,8 +27,8 @@ lvim.plugins = {
     end,
   },
   {
-    "karb94/neoscroll.nvim",
-    event = "WinScrolled",
+    'karb94/neoscroll.nvim',
+    event = 'WinScrolled',
     config = function()
       require('neoscroll').setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
@@ -80,14 +39,14 @@ lvim.plugins = {
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
         respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-        easing_function = "cubic", -- Default easing function
+        easing_function = 'cubic', -- Default easing function
         pre_hook = nil, -- Function to run before the scrolling animation starts
         post_hook = nil, -- Function to run after the scrolling animation ends
       })
     end
   },
   {
-    "simrat39/symbols-outline.nvim",
+    'simrat39/symbols-outline.nvim',
     config = function()
       require('symbols-outline').setup({
         highlight_hovered_item = true,
@@ -106,18 +65,18 @@ lvim.plugins = {
         fold_markers = { '', '' },
         wrap = false,
         keymaps = { -- These keymaps can be a string or a table for multiple keys
-          close = { "<Esc>", "q" },
-          goto_location = "<Cr>",
-          focus_location = "o",
-          hover_symbol = "<C-space>",
-          toggle_preview = "K",
-          rename_symbol = "r",
-          code_actions = "a",
-          fold = "h",
-          unfold = "l",
-          fold_all = "W",
-          unfold_all = "E",
-          fold_reset = "R",
+          close = { '<Esc>', 'q' },
+          goto_location = '<Cr>',
+          focus_location = 'o',
+          hover_symbol = '<C-space>',
+          toggle_preview = 'K',
+          rename_symbol = 'r',
+          code_actions = 'a',
+          fold = 'h',
+          unfold = 'l',
+          fold_all = 'W',
+          unfold_all = 'E',
+          fold_reset = 'R',
         },
         lsp_blacklist = {},
         symbol_blacklist = {},
@@ -155,17 +114,17 @@ lvim.plugins = {
     end
   },
   {
-    "themaxmarchuk/tailwindcss-colors.nvim",
+    'themaxmarchuk/tailwindcss-colors.nvim',
     config = function()
-      require("tailwindcss-colors").setup()
+      require('tailwindcss-colors').setup()
     end
   },
   {
-    "norcalli/nvim-colorizer.lua",
-    event = "BufWinEnter",
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufWinEnter',
     config = function()
-      require("colorizer").setup(
-        { "css", "scss", "html", "php", "twig", "javascript" },
+      require('colorizer').setup(
+        { 'css', 'scss', 'html', 'php', 'twig', 'javascript' },
         {
           RGB = true, -- #RGB hex codes
           RRGGBB = true, -- #RRGGBB hex codes
@@ -178,8 +137,8 @@ lvim.plugins = {
     end,
   },
   {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    'folke/trouble.nvim',
+    cmd = 'TroubleToggle',
   },
   {
     'rmagatti/goto-preview',
@@ -195,7 +154,7 @@ lvim.plugins = {
           vim.api.nvim_buf_set_keymap(buffer, 'n', 'q', ':q<CR>', { noremap = true })
         end,
         references = {
-          telescope = require("telescope.themes").get_dropdown({
+          telescope = require('telescope.themes').get_dropdown({
             hide_preview = false,
             layout_config = {
               width = 0.8,
@@ -206,19 +165,19 @@ lvim.plugins = {
     end
   },
   {
-    "nacro90/numb.nvim",
-    event = "BufRead",
+    'nacro90/numb.nvim',
+    event = 'BufRead',
     config = function()
-      require("numb").setup {
+      require('numb').setup {
         show_numbers = true, -- Enable 'number' for the window while peeking
         show_cursorline = true, -- Enable 'cursorline' for the window while peeking
       }
     end,
   },
   {
-    "p00f/nvim-ts-rainbow",
+    'p00f/nvim-ts-rainbow',
     config = function()
-      require("nvim-treesitter.configs").setup {
+      require('nvim-treesitter.configs').setup {
         rainbow = {
           enable = true,
           extended_mode = true,
@@ -228,27 +187,27 @@ lvim.plugins = {
     end
   },
   {
-    "nvim-telescope/telescope-file-browser.nvim",
+    'nvim-telescope/telescope-file-browser.nvim',
   },
   {
-    "jeffkreeftmeijer/vim-numbertoggle",
+    'jeffkreeftmeijer/vim-numbertoggle',
   },
   {
-    "nvim-zh/colorful-winsep.nvim",
-    event = "BufWinEnter",
+    'nvim-zh/colorful-winsep.nvim',
+    event = 'BufWinEnter',
     config = function()
-      require("colorful-winsep").setup({
+      require('colorful-winsep').setup({
         -- highlight for Window separator
         highlight = {
-          bg = "#16161E",
-          fg = "#32566E",
+          bg = '#16161E',
+          fg = '#32566E',
         },
         -- timer refresh rate
         interval = 30,
         -- This plugin will not be activated for filetype in the following table.
-        no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
+        no_exec_files = { 'packer', 'TelescopePrompt', 'mason', 'CompetiTest', 'NvimTree' },
         -- Symbols for separator lines, the order: horizontal, vertical, top left, top right, bottom left, bottom right.
-        symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
+        symbols = { '━', '┃', '┏', '┓', '┗', '┛' },
         close_event = function()
           -- Executed after closing the window separator
         end,
@@ -259,19 +218,20 @@ lvim.plugins = {
     end
   },
   {
-    "sindrets/diffview.nvim",
-    event = "BufWinEnter",
+    'ErichDonGubler/lsp_lines.nvim',
+    config = function()
+      require('lsp_lines').setup()
+    end,
+  },
+  {
+    'sindrets/diffview.nvim',
+    event = 'BufWinEnter',
   },
   -- Color schemes.
   {
-    "olimorris/onedarkpro.nvim",
+    'olimorris/onedarkpro.nvim',
   },
   {
-    "rebelot/kanagawa.nvim",
+    'rebelot/kanagawa.nvim',
   },
 }
-
--- Attach ls_signature to lsp
-lvim.lsp.on_attach_callback = function()
-  require("lsp_signature").on_attach()
-end
