@@ -9,7 +9,17 @@ lvim.autocommands = {
       pattern = { "*" },
       command = ":highlight MatchParen ctermfg=yellow guifg=yellow",
     },
-  }
+  },
+  {
+    -- Auto-reload file when changed on disk
+    -- Requires setting vim.o.autoread = true
+    -- See settings.lua file.
+    "BufEnter,CursorHold,CursorHoldI,FocusGained",
+    {
+      pattern = { "*" },
+      command = "if mode() != 'c' | checktime | endif",
+    }
+  },
 }
 
 vim.api.nvim_create_autocmd(

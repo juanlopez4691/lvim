@@ -24,3 +24,7 @@ vim.cmd('set whichwrap+=<,>,h,l,[,]')
 -- Disable default virtual text to avoid duplicates as
 -- we are using plugin ErichDonGubler/lsp_lines.nvim
 lvim.lsp.diagnostics.virtual_text = false
+
+-- Reload a file when it is changed outside of nvim
+-- Complemented with an autocommand in autocommands.lua
+vim.o.autoread = true
