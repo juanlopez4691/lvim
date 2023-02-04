@@ -187,6 +187,8 @@ lvim.plugins = {
     end
   },
   {
+    -- Telescope extension file_browser
+    lazy = true,
     'nvim-telescope/telescope-file-browser.nvim',
   },
   {
