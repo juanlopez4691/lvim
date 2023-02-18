@@ -6,12 +6,31 @@ function telescope_settings()
     width = 0.95,
     height = 0.95,
   }
+  local window_min_size = {
+    width = 0.5,
+    height = 0.5,
+  }
 
-  lvim.builtin.telescope.pickers.find_files = {
+  -- Config for flex layout maximizing window size
+  local layout_flex_max = {
     layout_strategy = "flex",
     layout_config = {
       preview_width = nil,
       prompt_position = "top",
+      width = window_max_size.width,
+      height =  window_max_size.height,
+    }
+  }
+
+  -- Custom configuration for Telescope pickers
+  lvim.builtin.telescope.pickers = {
+    live_grep = layout_flex_max,
+    find_files = layout_flex_max,
+    colorscheme = {
+      theme = "dropdown",
+      layout_config = {
+        vertical = window_min_size
+      },
     }
   }
 
@@ -22,12 +41,6 @@ function telescope_settings()
     path_display = { "absolute" },
     -- Start telescope in normal mode.
     initial_mode = 'normal',
-    -- Make telescope window bigger.
-    layout_config = {
-      center = window_max_size,
-      vertical = window_max_size,
-      horizontal = window_max_size,
-    },
     -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
     -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
     mappings = {
