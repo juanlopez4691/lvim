@@ -220,12 +220,6 @@ lvim.plugins = {
     end
   },
   {
-    'ErichDonGubler/lsp_lines.nvim',
-    config = function()
-      require('lsp_lines').setup()
-    end,
-  },
-  {
     'sindrets/diffview.nvim',
     event = 'BufWinEnter',
   },
