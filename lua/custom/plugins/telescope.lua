@@ -7,6 +7,14 @@ function telescope_settings()
     height = 0.95,
   }
 
+  lvim.builtin.telescope.pickers.find_files = {
+    layout_strategy = "flex",
+    layout_config = {
+      preview_width = nil,
+      prompt_position = "top",
+    }
+  }
+
   telescope.defaults = {
     -- Exclude some folders from telescope live_grep.
     file_ignore_paths = { "vendor", "node_modules", "dist" },
