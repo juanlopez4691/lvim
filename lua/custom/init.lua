@@ -3,11 +3,11 @@ require 'helper'
 -- Load custom settings, plugins, etc
 local files = {
   'settings',
-  'keymappings',
   'plugins/init',
-  'code/init',
-  'autocommands',
   'colorscheme',
+  'code/init',
+  'keymappings',
+  'autocommands',
 }
 
 Helper.require_files('custom/', files)
