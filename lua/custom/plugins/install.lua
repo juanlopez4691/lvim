@@ -175,18 +175,6 @@ lvim.plugins = {
     end,
   },
   {
-    'p00f/nvim-ts-rainbow',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_file_lines = 2000,
-        }
-      }
-    end
-  },
-  {
     -- Telescope extension file_browser
     lazy = true,
     'nvim-telescope/telescope-file-browser.nvim',
