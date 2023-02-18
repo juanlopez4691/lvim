@@ -12,20 +12,37 @@ function telescope_settings()
   }
 
   -- Config for flex layout maximizing window size
-  local layout_flex_max = {
+  local layout_flex_max_size = {
     layout_strategy = "flex",
     layout_config = {
       preview_width = nil,
       prompt_position = "top",
       width = window_max_size.width,
-      height =  window_max_size.height,
+      height = window_max_size.height,
+    }
+  }
+  -- Config for dropdown layout maximizing window width
+  local layout_dropdown_max_width = {
+    theme = "dropdown",
+    layout_config = {
+      width = window_max_size.width,
     }
   }
 
   -- Custom configuration for Telescope pickers
   lvim.builtin.telescope.pickers = {
-    live_grep = layout_flex_max,
-    find_files = layout_flex_max,
+    git_commits = {
+      theme = "ivy",
+    },
+    git_bcommits = {
+      theme = "ivy",
+    },
+    git_branches = layout_dropdown_max_width,
+    git_status = layout_dropdown_max_width,
+    git_files = layout_flex_max_size,
+    live_grep = layout_flex_max_size,
+    find_files = layout_flex_max_size,
+    oldfiles = layout_flex_max_size,
     colorscheme = {
       theme = "dropdown",
       layout_config = {
