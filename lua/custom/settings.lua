@@ -21,8 +21,7 @@ lvim.lint_on_save = true
 lvim.line_wrap_cursor_movement = true
 vim.cmd('set whichwrap+=<,>,h,l,[,]')
 
--- Disable default virtual text to avoid duplicates as
--- we are using plugin ErichDonGubler/lsp_lines.nvim
+-- Disable virtual text display for lsp diagnostics
 lvim.lsp.diagnostics.virtual_text = false
 
 -- Reload a file when it is changed outside of nvim
