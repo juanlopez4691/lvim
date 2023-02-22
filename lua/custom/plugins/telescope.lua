@@ -2,54 +2,6 @@
 function telescope_settings()
   local telescope = lvim.builtin.telescope
   local _, actions = pcall(require, "telescope.actions")
-  local window_max_size = {
-    width = 0.95,
-    height = 0.95,
-  }
-  local window_min_size = {
-    width = 0.5,
-    height = 0.5,
-  }
-
-  -- Config for flex layout maximizing window size
-  local layout_flex_max_size = {
-    layout_strategy = "flex",
-    layout_config = {
-      preview_width = nil,
-      prompt_position = "top",
-      width = window_max_size.width,
-      height = window_max_size.height,
-    }
-  }
-  -- Config for dropdown layout maximizing window width
-  local layout_dropdown_max_width = {
-    theme = "dropdown",
-    layout_config = {
-      width = window_max_size.width,
-    }
-  }
-
-  -- Custom configuration for Telescope pickers
-  lvim.builtin.telescope.pickers = {
-    git_commits = {
-      theme = "ivy",
-    },
-    git_bcommits = {
-      theme = "ivy",
-    },
-    git_branches = layout_dropdown_max_width,
-    git_status = layout_dropdown_max_width,
-    git_files = layout_flex_max_size,
-    live_grep = layout_flex_max_size,
-    find_files = layout_flex_max_size,
-    oldfiles = layout_flex_max_size,
-    colorscheme = {
-      theme = "dropdown",
-      layout_config = {
-        vertical = window_min_size
-      },
-    }
-  }
 
   telescope.defaults = {
     -- Exclude some folders from telescope live_grep.
@@ -74,7 +26,60 @@ function telescope_settings()
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+    layout_config = {
+      -- prompt_position = "top",
+      height = 0.9,
+      width = 0.9,
+      bottom_pane = {
+        height = 25,
+        preview_cutoff = 120,
+      },
+      center = {
+        height = 0.4,
+        preview_cutoff = 40,
+        width = 0.5,
+      },
+      cursor = {
+        preview_cutoff = 40,
+      },
+      horizontal = {
+        preview_cutoff = 120,
+        preview_width = 0.6,
+      },
+      vertical = {
+        preview_cutoff = 40,
+      },
+      flex = {
+        flip_columns = 150,
+      },
+    },
   }
+
+  for key, _ in pairs(lvim.builtin.telescope.pickers) do
+    if key ~= "planets" then
+      lvim.builtin.telescope.pickers[key].previewer = nil
+      lvim.builtin.telescope.pickers[key].theme = nil
+      lvim.builtin.telescope.pickers[key].layout_strategy = nil
+    end
+  end
+
+  lvim.builtin.telescope.pickers.git_files.previewer = nil
+
+  -- lvim.builtin.telescope.defaults.initial_mode = "insert"
+  -- lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
+  lvim.builtin.telescope.defaults.layout_strategy = "flex"
+  lvim.builtin.telescope.defaults.prompt_prefix = "  "
+  lvim.builtin.telescope.defaults.selection_caret = "❯ "
+  lvim.builtin.telescope.defaults.mappings.i["<esc>"] = actions.close
+  lvim.builtin.telescope.defaults.winblend = 10
+
+  lvim.builtin.telescope.defaults.borderchars = {
+    -- prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+    prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    results = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+  }
+
 end
 
 -- Apply Telescope settings
