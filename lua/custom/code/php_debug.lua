@@ -1,6 +1,3 @@
-local lsp_manager = require("lvim.lsp.manager")
-lsp_manager.setup("intelephense")
-
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#PHP
 local dap = require("dap")
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
