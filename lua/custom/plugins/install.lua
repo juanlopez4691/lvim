@@ -12,7 +12,7 @@ lvim.plugins = {
     'ray-x/lsp_signature.nvim',
     -- Attach lsp_signature to lsp
     config = function()
-      require 'lsp_signature'.on_attach()
+      require('lsp_signature').on_attach()
     end,
     event = 'BufRead'
   },
