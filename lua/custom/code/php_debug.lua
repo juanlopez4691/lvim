@@ -8,12 +8,6 @@ dap.adapters.php = {
   args = { mason_path .. "packages/php-debug-adapter/extension/out/phpDebug.js" },
 }
 dap.configurations.php = {
-  -- {
-  --   name = "Listen for Xdebug",
-  -- type = "php",
-  -- request = "launch",
-  -- port = 9003,
-  -- },
   {
     type = "php",
     request = "launch",
@@ -22,8 +16,6 @@ dap.configurations.php = {
     pathMappings = {
       ["/var/www/html"] = "${workspaceFolder}"
     },
-    -- serverSourceRoot = '',
-    -- localSourceRoot = '',
   },
   {
     name = "Debug currently open script",
