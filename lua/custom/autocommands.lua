@@ -11,6 +11,16 @@ lvim.autocommands = {
     },
   },
   {
+    -- Set working directory
+    "BufRead,BufNewFile",
+    {
+      pattern = { "*" },
+      callback = function()
+        require('nvim-rooter').setup()
+      end
+    },
+  },
+  {
     -- Auto-reload file when changed on disk
     -- Requires setting vim.o.autoread = true
     -- See settings.lua file.
