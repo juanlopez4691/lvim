@@ -1,5 +1,5 @@
 -- Define telescope config settings.
-function telescope_settings()
+local function telescope_settings()
   local telescope = lvim.builtin.telescope
   local _, actions = pcall(require, "telescope.actions")
 
