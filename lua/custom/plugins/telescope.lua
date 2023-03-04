@@ -93,8 +93,8 @@ lvim.builtin.telescope.on_config_done = function(telescope)
     extensions = {
       file_browser = {
         theme = "ivy",
-        -- disables netrw and use telescope-file-browser in its place
-        hijack_netrw = true,
+        -- Do not open file_browser when starting nvim on a directory
+        hijack_netrw = false,
         mappings = {
           ["i"] = {
             ["<C-j>"] = actions.move_selection_next,
