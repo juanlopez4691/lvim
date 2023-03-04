@@ -3,6 +3,7 @@ require 'helper'
 local files = {
   'core',
   'install',
+  'alpha',
   'nvimtree',
   'telescope',
   'treesitter',
