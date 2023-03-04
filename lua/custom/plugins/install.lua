@@ -27,12 +27,6 @@ lvim.plugins = {
     end,
   },
   {
-    'notjedi/nvim-rooter.lua',
-    config = function()
-      require('nvim-rooter').setup()
-    end
-  },
-  {
     'karb94/neoscroll.nvim',
     event = 'WinScrolled',
     config = function()
