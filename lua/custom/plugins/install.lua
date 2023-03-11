@@ -218,4 +218,9 @@ lvim.plugins = {
   {
     'rebelot/kanagawa.nvim',
   },
+  -- Prevents nesting of nvim instances
+  {
+    'willothy/flatten.nvim',
+    config = true,
+  },
 }
