@@ -5,11 +5,20 @@ lvim.colorscheme = "tokyonight-night"
 
 -- Custom colors for kanagawa colorscheme.
 if lvim.colorscheme == "kanagawa" then
-  local colors = {
-    sumiInk1 = "#17171F",
-    sumiInk3 = "#22222d"
-  }
-  require 'kanagawa'.setup({ colors = colors })
+  require 'kanagawa'.setup({
+    compile = false,
+    theme = "wave",
+    colors = {
+      palette = {
+      },
+      theme = {
+        all = {},
+        wave = {},
+        lotus = {},
+        dragon = {},
+      },
+    }
+  })
 end
 
 -- Fix galaxyline colors for tokyonight colorscheme
