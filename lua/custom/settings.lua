@@ -5,6 +5,9 @@ vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.cmd('set nowrap')
 
+-- Hide cursor on inactive window.
+vim.opt.guicursor = "a:noCursor"
+
 lvim.log.level = "info"
 lvim.leader = "space"
 
