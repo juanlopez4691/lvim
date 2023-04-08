@@ -36,6 +36,12 @@ lvim.builtin.which_key.mappings["E"] = { "<cmd>Telescope file_browser<CR>", "Tel
 -- Symbols outline plugin
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols outline" }
 
+-- Plugin danymat/neogen
+lvim.builtin.which_key.mappings["N"] = {
+  name = "Neogen",
+  c = { "<cmd>lua require('neogen').generate({ type = 'class' })<CR>", "Generate class doc block" },
+  f = { "<cmd>lua require('neogen').generate({ type = 'func' })<CR>", "Generate function doc block" },
+}
 -- Plugin rmagatti/goto-preview
 lvim.builtin.which_key.mappings["G"] = {
   name = "+Goto preview",
