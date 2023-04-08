@@ -186,8 +186,8 @@ lvim.plugins = {
   },
   {
     -- Telescope extension file_browser
-    lazy = true,
     'nvim-telescope/telescope-file-browser.nvim',
+    lazy = true,
   },
   {
     'jeffkreeftmeijer/vim-numbertoggle',
