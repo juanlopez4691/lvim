@@ -1,5 +1,6 @@
 -- Set color scheme
-lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "tokyodark"
+-- lvim.colorscheme = "tokyonight-night"
 -- lvim.colorscheme = "onedark"
 -- lvim.colorscheme = "kanagawa"
 
@@ -19,6 +20,13 @@ if lvim.colorscheme == "kanagawa" then
       },
     }
   })
+end
+
+if lvim.colorscheme == "tokyodark" then
+  vim.g.tokyodark_transparent_background = false
+  vim.g.tokyodark_enable_italic_comment = true
+  vim.g.tokyodark_enable_italic = true
+  vim.g.tokyodark_color_gamma = "1.0"
 end
 
 -- Fix galaxyline colors for tokyonight colorscheme
