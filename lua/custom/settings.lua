@@ -1,5 +1,6 @@
 -- ## General settings
 
+vim.g.editorconfig = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true

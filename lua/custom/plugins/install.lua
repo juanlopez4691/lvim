@@ -17,16 +17,6 @@ lvim.plugins = {
     event = 'BufRead'
   },
   {
-    'editorconfig/editorconfig-vim',
-    event = 'BufRead',
-    config = function()
-      vim.g.EditorConfig_exclude_patterns = {
-        'fugitive://.*',
-        'scp://.*'
-      }
-    end,
-  },
-  {
     'karb94/neoscroll.nvim',
     event = 'WinScrolled',
     config = function()
@@ -227,6 +217,9 @@ lvim.plugins = {
   },
   {
     'rebelot/kanagawa.nvim',
+  },
+  {
+    'tiagovla/tokyodark.nvim',
   },
   -- Prevents nesting of nvim instances
   {
