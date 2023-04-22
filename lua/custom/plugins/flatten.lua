@@ -1,6 +1,6 @@
 local flatten = require('flatten')
 
-opts = {
+local opts = {
   callbacks = {
     pre_open = function()
       -- Close toggleterm when an external open request is received
