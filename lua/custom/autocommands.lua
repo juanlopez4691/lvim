@@ -34,3 +34,21 @@ autocmd(
     end,
   }
 )
+
+-- Go to last location when opening a buffer
+autocmd(
+  "BufReadPost",
+  {
+    group = augroup("last_loc", { clear = true }),
+    callback = function()
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        -- Jump to last position in buffer
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+        -- Center line on screen
+        vim.api.nvim_feedkeys('zz', 'n', true)
+      end
+    end,
+  }
+)
