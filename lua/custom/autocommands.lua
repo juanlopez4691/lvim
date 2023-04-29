@@ -35,6 +35,15 @@ autocmd(
   }
 )
 
+-- Don't auto comment new lines
+autocmd(
+  "BufEnter",
+  {
+    pattern = "",
+    command = "set fo-=c fo-=r fo-=o"
+  }
+)
+
 -- Go to last location when opening a buffer
 autocmd(
   "BufReadPost",
