@@ -1,5 +1,7 @@
 -- ## Autocommands
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
 lvim.autocommands = {
   {
@@ -22,12 +24,12 @@ lvim.autocommands = {
   },
 }
 
-vim.api.nvim_create_autocmd(
+-- let treesitter use bash highlight for zsh files as well
+autocmd(
   "FileType",
   {
     pattern = "zsh",
     callback = function()
-      -- let treesitter use bash highlight for zsh files as well
       require("nvim-treesitter.highlight").attach(0, "bash")
     end,
   }
