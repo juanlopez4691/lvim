@@ -3,6 +3,15 @@
 -- Useful insert mode remappings
 lvim.keys.insert_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["<C-c>"] = "<ESC>"
+-- Auto-indent current empty line
+vim.keymap.set("n", "i", function()
+  if #vim.fn.getline "." == 0 then
+    return [["_cc]]
+  else
+    return "i"
+  end
+end, { expr = true })
+
 -- Save and cancel
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<C-c>"] = "<ESC>"
