@@ -42,7 +42,7 @@ lvim.line_wrap_cursor_movement = true
 vim.cmd('set whichwrap+=<,>,h,l,[,]')
 
 -- Disable virtual text display for lsp diagnostics
-lvim.lsp.diagnostics.virtual_text = false
+vim.diagnostic.config({ virtual_text = false })
 
 -- Reload a file when it is changed outside of nvim
 -- Complemented with an autocommand in autocommands.lua
