@@ -29,6 +29,9 @@ lvim.keys.normal_mode["<A-l>"] = ":BufferLineCycleNext<CR>"
 -- Restore jump to screen top, bottom
 lvim.keys.normal_mode["<S-h>"] = "H"
 lvim.keys.normal_mode["<S-l>"] = "L"
+
+-- ## Window panes
+
 -- Resize window panes
 if vim.fn.has "mac" == 1 then
   lvim.keys.normal_mode["<A-->"] = ":resize -2<CR>"
@@ -36,6 +39,9 @@ if vim.fn.has "mac" == 1 then
   lvim.keys.normal_mode["<A-,>"] = ":vertical resize -2<CR>"
   lvim.keys.normal_mode["<A-.>"] = ":vertical resize +2<CR>"
 end
+-- Zoom in/out current pane
+lvim.keys.normal_mode["Zz"] = "<C-w>_ | <C-w>|"
+lvim.keys.normal_mode["Zo"] = "<C-w>="
 
 -- ## Whichkey mappings
 
