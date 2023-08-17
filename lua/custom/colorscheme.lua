@@ -1,8 +1,8 @@
 -- Set color scheme
-lvim.colorscheme = "tokyodark"
+-- lvim.colorscheme = "tokyodark"
 -- lvim.colorscheme = "tokyonight-night"
 -- lvim.colorscheme = "onedark"
--- lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "kanagawa"
 
 -- Custom colors for kanagawa colorscheme.
 if lvim.colorscheme == "kanagawa" then
