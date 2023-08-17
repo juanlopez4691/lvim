@@ -105,7 +105,12 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           },
         },
       },
+      undo = {
+        --Undo extension options.
+        use_delta = true,
+      }
     },
   })
   telescope.load_extension("file_browser")
+  telescope.load_extension('undo')
 end

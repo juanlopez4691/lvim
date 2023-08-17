@@ -209,6 +209,16 @@ lvim.plugins = {
       })
     end
   },
+  -- Undo tree navigation
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'debugloop/telescope-undo.nvim',
+    },
+    -- optional: vim.keymap.set('n', '<leader>u', '<cmd>Telescope undo<cr>')
+  },
+  -- Diff view
   {
     'sindrets/diffview.nvim',
     event = 'BufWinEnter',
