@@ -43,9 +43,9 @@ lvim.plugins = {
     version = '*'
   },
   {
-    -- 'simrat39/symbols-outline.nvim',
-    'enddeadroyal/symbols-outline.nvim',
-    branch = 'bugfix/symbol-hover-misplacement',
+    'simrat39/symbols-outline.nvim',
+    -- 'enddeadroyal/symbols-outline.nvim',
+    -- branch = 'bugfix/symbol-hover-misplacement',
     config = function()
       require('symbols-outline').setup({
         highlight_hovered_item = true,
